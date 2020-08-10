@@ -10,37 +10,74 @@
 
 </head>
 <body>
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center" style= "background: url('https://i.ytimg.com/vi/uTzULG9z5Zk/maxresdefault.jpg');
+    background-size: cover; color: #FFFFFF;">
         <h1 class="display-4">Mission to Mars</h1>
         <a class="btn btn-primary btn-lg " href="/scrape" role="button">Scrape New Data</a>
       </div>
     
     <div class = "col-md-12">
         <h2>Latest Mars News</h2>
-        <h3>{{ mars.news_title }}</h3>
+        <h5>{{ mars.news_title }}</h5>
         <p>{{ mars.news_paragraph }}</p>
     </div>
 
     <div class = "row">
+
+        <!-- Mars Featured Image -->
         <div class = "col-md-8">
             <h2>Featured Mars Image</h2>
             <img src = "{{  mars.mars_img  }}", alt="Mars Image">
         </div>
 
+        <!-- Mars Weather -->
+
         <div class = "col-md-4">
-            <h3>Current Weather on Mars</h3>
-            <p>{{  mars.mars_weather  }}</p>
-            <br>
-            <h3>Mars Facts</h3>
-            <p>{{  mars.mars_facts}}</p>
+            <div class="col-md-12">
+
+                <h3>Current Weather on Mars</h3>
+                <p>{{  mars.mars_weather  }}</p>
+                <br>
+            </div>
+        <!-- Mars Facts -->
+            <div class="col-md-12">
+                <h3>Mars Facts</h3>
+                <p>{{  mars.mars_facts | safe}}</p>
+            </div>   
         </div>
     </div>
 
+    <!-- Mars Hemispheres -->
+<!--
     <div class = "col-md-12">
         <h2>Mars Hemispheres</h2>
-        {{  mars.mars_hemisphere.title.0  }}
-        {{  mars.mars_hemisphere.img_url.0  }}
+        {% for hemisphere in mars.mars_hemisphere %}
+            <div class="col-md-6">
+                <img src="{{ hemisphere.img_url }}">
+                <h3> {{ hemisphere.title }}</h3>
+            </div>
+        {% endfor %}
     </div>
+-->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="text-center">Mars Hemispheres</h2>
+            <div class="row car-deck ">
+                {% for hemisphere in mars.mars_hemisphere %}
+                <div class="col-sm-12 col-lg-6 mb-6">
+                    <div class="card" >
+                        <img class="card-img-top" src="{{ hemisphere.img_url }}" alt="Mars Hemisphere">
+                        <div class="card-body">
+                            <p class="card-title text-center ">{{ hemisphere.title }}</p>
+                        </div>
+                    </div>   
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
 </body>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
