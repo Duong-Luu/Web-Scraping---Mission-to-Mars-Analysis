@@ -6,7 +6,7 @@
 
 **Part 1: Scraping**
 
-- `scrape_planet.py` includes the following below:
+- `scrape_mars.py` includes the following below:
     - [NASA Mars News Site](https://mars.nasa.gov/news/) latest news Title, Paragraph Text, and news Date
     - [JPL Mars Space Images](https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars) featured Image
     - [Mars Weather twitter](https://twitter.com/marswxreport?lang=en) latest Mars weather tweet 
