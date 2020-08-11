@@ -15,29 +15,37 @@
         <h1 class="display-4">Mission to Mars</h1>
         <a class="btn btn-primary btn-lg " href="/scrape" role="button">Scrape New Data</a>
       </div>
-    
-    <div class = "col-md-12">
-        <h2>Latest Mars News</h2>
-        <h5>{{ mars.news_title }}</h5>
-        <p>{{ mars.news_paragraph }}</p>
-    </div>
+
+    <blockquote class="blockquote left-right card shadow shadow px-3 py-3">
+
+        <div class = "col-md-12">
+            <h2>Latest Mars News</h2>
+            <h5>{{ mars.news_title }}</h5>
+            <p>{{ mars.news_paragraph }}</p>
+        </div>
+    </blockquote>
+
 
     <div class = "row">
-
+        
         <!-- Mars Featured Image -->
-        <div class = "col-md-8">
-            <h2>Featured Mars Image</h2>
-            <img src = "{{  mars.mars_img  }}", alt="Mars Image">
+        <div class = "col-md-7">
+            <div class="col-md-12">
+                <h2>Featured Mars Image</h2>
+                <img src = "{{  mars.mars_img  }}", alt="Mars Image" style= "width: 800px; height: 600px;">
+            </div>
         </div>
 
         <!-- Mars Weather -->
 
-        <div class = "col-md-4">
+        <div class = "col-md-5">
             <div class="col-md-12">
+                <blockquote class="blockquote left-right card shadow shadow px-3 py-3">
+                    <h3>Current Weather on Mars</h3>
+                    <p>{{  mars.mars_weather  }}</p>
+                    <br>
+                </blockquote>
 
-                <h3>Current Weather on Mars</h3>
-                <p>{{  mars.mars_weather  }}</p>
-                <br>
             </div>
         <!-- Mars Facts -->
             <div class="col-md-12">
@@ -59,23 +67,28 @@
         {% endfor %}
     </div>
 -->
-    <section id="gallery">
-        <div class="container">
-            <h2 class="text-center">Mars Hemispheres</h2>
-            <div class="row car-deck ">
-                {% for hemisphere in mars.mars_hemisphere %}
-                <div class="col-sm-12 col-lg-6 mb-6">
-                    <div class="card" >
-                        <img class="card-img-top" src="{{ hemisphere.img_url }}" alt="Mars Hemisphere">
-                        <div class="card-body">
-                            <p class="card-title text-center ">{{ hemisphere.title }}</p>
-                        </div>
-                    </div>   
+<br>
+<br>
+    <blockquote class="blockquote left-right card shadow shadow px-3 py-3">
+
+        <section id="gallery" >
+            <div class="container">
+                <h2 class="text-center">Mars Hemispheres</h2>
+                <div class="row car-deck ">
+                    {% for hemisphere in mars.mars_hemisphere %}
+                    <div class="col-sm-12 col-lg-6 mb-6">
+                        <div class="card" >
+                            <img class="card-img-top" src="{{ hemisphere.img_url }}" alt="Mars Hemisphere">
+                            <div class="card-body">
+                                <p class="card-title text-center ">{{ hemisphere.title }}</p>
+                            </div>
+                        </div>   
+                    </div>
+                    {% endfor %}
                 </div>
-                {% endfor %}
             </div>
-        </div>
-    </section>
+        </section>
+    </blockquote>
 
 
 </body>
