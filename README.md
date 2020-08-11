@@ -17,7 +17,7 @@
 **Part 2: MongoDB and Flask Application**
 - `app.py` includes the following below:
     - a root route `(/)` that will query a Mongo database and pass the mars data into an HTML template to display the data
-    - a route called `(/scrape)` that will import `scrape_planet.py` script and call the scrape function
+    - a route called `(/scrape)` that will import `scrape_mars.py` script and call the scrape function
 
 - `index.html` includes the following below:
     - takes the mars data dictionary and display all of the data in the appropriate HTML elements with some Boostrap 4 and css style customization 
