@@ -37,6 +37,7 @@ def mars_img(browser):
     browser.visit(url_mars_img)
 
     time.sleep(10)
+    # Find and click the full image button
 
     html = browser.html
     soup = bs(html, "html.parser")
