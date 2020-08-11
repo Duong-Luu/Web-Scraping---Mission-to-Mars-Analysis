@@ -23,4 +23,4 @@
     - takes the mars data dictionary and display all of the data in the appropriate HTML elements with some Boostrap 4 and css style customization 
 
 
-![]()
+![](https://github.com/Duong-Luu/web-scraping-challenge/blob/master/images/Web%20Page.png)
